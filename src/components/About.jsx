@@ -17,12 +17,18 @@ const About = () => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-3xl font-bold mb-3 text-indigo-400">Sobre mí</h2>
-      <p className="text-gray-400 italic mb-4">Desarrollador apasionado por la tecnología y el diseño.</p>
-      <p className="text-gray-300 text-lg leading-relaxed">
-        Soy un estudiante de Ingeniería en Software con pasión por el desarrollo web, backend y el diseño de interfaces.
-        Me gusta combinar la tecnología con la creatividad para crear soluciones eficientes y elegantes.
-      </p>
+      <h2 className="text-secondary text-3xl font-bold mb-4">
+      Sobre mí
+    </h2>
+
+    <p className="text-primary italic mb-4">
+      Desarrollador apasionado por la tecnología y el diseño.
+    </p>
+
+    <p className="text-secondary/80 text-lg leading-relaxed">
+      Soy un estudiante de Ingeniería en Software con pasión por el desarrollo web, backend y el diseño de interfaces.
+      Me gusta combinar la tecnología con la creatividad para crear soluciones eficientes y elegantes.
+    </p>
     </motion.div>
   </section>
 );
