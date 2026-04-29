@@ -2,37 +2,57 @@ import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import cvPdf from "../assets/cv-samuel-solano-molina.pdf";
+import BorderGlow from "./reactbits/BorderGlow";
 
 const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="inicio" className="max-w-6xl mx-auto px-6 pt-20 text-center">
-      <h2 className="text-5xl font-bold mb-4 text-main">
-        {t("hero.title")}
-      </h2>
+    <section
+      id="inicio"
+      className="max-w-7xl mx-auto px-6 pt-24 grid lg:grid-cols-2 gap-12 items-center"
+    >
+      <div>
 
-      <p className="text-white/75 max-w-2xl mx-auto mb-8">
-        {t("hero.subtitle")}
-      </p>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          Samuel Solano
+          <br />
+          Molina
+        </h1>
 
-      <div className="flex justify-center gap-4 flex-wrap">
-        <a
-          href="#proyectos"
-          className="inline-block bg-main text-white px-6 py-3 rounded-xl hover:bg-accent hover:text-black transition-all duration-300"
-        >
-          {t("hero.projectsButton")}
-        </a>
+        <h2 className="text-4xl md:text-7xl font-bold text-main mt-4 leading-tight">
+        {t("hero.roleLine1")}
+        <br />
+        {t("hero.roleLine2")}
+       </h2>
 
-        <a
-          href={cvPdf}
-          download="CV-Samuel-Solano-Molina.pdf"
-          className="inline-flex items-center gap-2 border border-main text-main px-6 py-3 rounded-xl bg-transparent hover:bg-main hover:text-white hover:-translate-y-1 transition-all duration-300"
-        >
-          <FaDownload />
-          {t("hero.cvButton")}
-        </a>
+        <div className="mt-8 inline-block bg-main text-white font-bold px-6 py-3 rounded-xl shadow-[0_0_25px_rgba(28,142,166,0.35)]">
+        {t("hero.phrase")}
+        </div>
       </div>
+
+      <BorderGlow
+      edgeSensitivity={10}
+      glowColor="192 40 69"
+      backgroundColor="#061014"
+      borderRadius={24}
+      glowRadius={30}
+      glowIntensity={1.4}
+      coneSpread={35}
+      animated={false}
+      colors={["#1C8EA6", "#8EC3D1", "#1C8EA6"]}
+      fillOpacity={0.35}
+    >
+      <div className="rounded-3xl p-8">
+        <h3 className="text-4xl font-bold text-main mb-4">
+          {t("about.title")}
+        </h3>
+
+        <p className="text-white/80 text-lg leading-8">
+          {t("about.text")}
+        </p>
+      </div>
+    </BorderGlow>
     </section>
   );
 };

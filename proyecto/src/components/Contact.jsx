@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <section id="contacto" className="px-6 max-w-5xl mx-auto">
-      <h2 className="text-4xl font-bold mb-4 text-center section-title">
+      <h2 className="text-5xl font-bold mb-4 text-center section-title">
         {t("contact.title")}
       </h2>
       <p className="text-white/75 mb-10 text-center max-w-2xl mx-auto"></p>

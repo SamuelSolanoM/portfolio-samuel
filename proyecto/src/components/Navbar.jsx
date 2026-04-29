@@ -1,6 +1,7 @@
 import React from "react";
-import favicon from "../assets/favicon.png";
 import { useTranslation } from "react-i18next";
+import favicon from "../assets/favicon.png";
+import PillNav from "./reactbits/PillNav";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -9,44 +10,33 @@ const Navbar = () => {
     i18n.changeLanguage(i18n.language === "es" ? "en" : "es");
   };
 
+  const items = [
+    { label: t("navbar.home"), href: "#inicio" },
+    { label: t("navbar.skills"), href: "#skills" },
+    { label: t("navbar.projects"), href: "#proyectos" },
+    { label: t("navbar.contact"), href: "#contacto" },
+    { label: t("navbar.switch"), href: "#idioma", action: "language" },
+  ];
+
   return (
-    <header className="sticky top-0 z-40 bg-black/90 border-b border-main/20 backdrop-blur">
-      <nav className="w-full px-8 py-4 flex items-center justify-between w-full">
-        <a href="#inicio" className="flex items-center gap-3">
-          <img
-            src={favicon}
-            alt="Logo"
-            className="w-10 h-10 object-contain rounded-md"
-          />
-          <h1 className="text-main font-bold text-xl whitespace-nowrap">
-            Samuel Solano
-          </h1>
-        </a>
+    <header className="sticky top-0 z-50 bg-black/90 border-b border-main/20 backdrop-blur h-28">
+      <nav className="max-w-7xl mx-auto px-8 h-28 flex items-center justify-between">
+        <PillNav
+        logo={favicon}
+        logoAlt="Samuel Solano Logo"
+        items={items}
+        activeHref="#inicio"
+        className="custom-pill-nav"
+        ease="power2.easeOut"
+        baseColor="#000000"
+        pillColor="#061014"
+        hoveredPillTextColor="#000000"
+        pillTextColor="#ffffff"
+        initialLoadAnimation={false}
+        onLanguageClick={changeLanguage}
+        onMobileMenuClick={() => {}}
+      />
 
-        <div className="flex items-center gap-6 text-sm ml-auto">
-          <a href="#inicio" className="hover:text-accent transition-colors">
-            {t("navbar.home")}
-          </a>
-          <a href="#sobre-mi" className="hover:text-accent transition-colors">
-            {t("navbar.about")}
-          </a>
-          <a href="#skills" className="hover:text-accent transition-colors">
-            {t("navbar.skills")}
-          </a>
-          <a href="#proyectos" className="hover:text-accent transition-colors">
-            {t("navbar.projects")}
-          </a>
-          <a href="#contacto" className="hover:text-accent transition-colors">
-            {t("navbar.contact")}
-          </a>
-
-          <button
-            onClick={changeLanguage}
-            className="px-4 py-2 rounded-full border border-main text-main hover:bg-main hover:text-white transition-all duration-300"
-          >
-            {t("navbar.switch")}
-          </button>
-        </div>
       </nav>
     </header>
   );

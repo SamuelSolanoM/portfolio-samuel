@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
+import CardSwap, { Card } from "./reactbits/CardSwap";
 
 import infinitiImg from "../assets/infiniti_growth.png";
 import dcodeImg from "../assets/Dcode.png";
@@ -7,124 +8,94 @@ import patronesImg from "../assets/Patrones.png";
 import pokemonImg from "../assets/pokemon.png";
 
 const Projects = () => {
-  const { t, i18n } = useTranslation();
-  const [activeFilter, setActiveFilter] = useState(t("projects.all"));
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const { t } = useTranslation();
 
   const projects = [
     {
       title: "Infinity Growth-UI",
       desc: t("projects.items.infinity.desc"),
-      tech: "C# .NET, SQL Server, UI",
-      category: t("projects.items.infinity.category"),
+      tech: "C# · .NET · SQL Server · UI",
       image: infinitiImg,
     },
     {
       title: "DreamInCode",
       desc: t("projects.items.dream.desc"),
-      tech: "IA, Node.js, Integraciones",
-      category: t("projects.items.dream.category"),
+      tech: "IA · Node.js · Integraciones",
       image: dcodeImg,
     },
     {
       title: "Proyecto Patrones",
       desc: t("projects.items.patrones.desc"),
-      tech: "Unity, C#, Patrones de diseño",
-      category: t("projects.items.patrones.category"),
+      tech: "Unity · C# · Patrones de diseño",
       image: patronesImg,
     },
     {
       title: "Pokemon Fight",
       desc: t("projects.items.pokemon.desc"),
-      tech: "Node.js, MongoDB, JavaScript",
-      category: t("projects.items.pokemon.category"),
+      tech: "Node.js · MongoDB · JavaScript",
       image: pokemonImg,
     },
   ];
 
-  const filters = [
-    t("projects.all"),
-    t("projects.individual"),
-    t("projects.group"),
-  ];
-
-  useEffect(() => {
-    setActiveFilter(t("projects.all"));
-  }, [i18n.language, t]);
-
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === t("projects.all")) return projects;
-    return projects.filter((project) => project.category === activeFilter);
-  }, [activeFilter, projects, t]);
-
   return (
-    <section id="proyectos" className="px-6 max-w-6xl mx-auto text-center">
-      <h2 className="section-title text-3xl font-bold mb-4">
-        {t("projects.title")}
-      </h2>
+    <section id="proyectos" className="px-6 max-w-7xl mx-auto">
 
-      <p className="text-white/75 max-w-2xl mx-auto mb-8">
-        {t("projects.subtitle")}
-      </p>
+      <div className="relative min-h-[650px] overflow-visible">
+        <div className="max-w-xl pt-16">
+          <h2 className="section-title text-5xl font-bold mb-4">
+          {t("projects.title")}
+          </h2>
 
-      <div className="flex justify-center flex-wrap gap-3 mb-10">
-        {filters.map((filter) => (
-          <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full border transition-all duration-300 ${
-              activeFilter === filter
-                ? "bg-main text-white border-main"
-                : "border-main/40 text-white/80 hover:bg-accent hover:text-black"
-            }`}
-          >
-            {filter}
-          </button>
-        ))}
-      </div>
+          <p className="text-white/70 text-lg leading-7">
+            {t("projects.subtitle")}
+          </p>
+        </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {filteredProjects.map((p) => (
-          <article
-            key={p.title}
-            onMouseEnter={() => setHoveredProject(p.title)}
-            onMouseLeave={() => setHoveredProject(null)}
-            className="glass-card rounded-2xl border border-main/20 p-6 text-left hover:-translate-y-2 hover:scale-[1.02] transition-all duration-500 overflow-hidden"
-          >
-            <span className="text-xs uppercase tracking-widest text-accent mb-2 block">
-              {p.category}
-            </span>
+        <CardSwap
+          width={600}
+          height={500}
+          cardDistance={70}
+          verticalDistance={80}
+          delay={5000}
+          pauseOnHover={false}
+          skewAmount={6}
+          easing="elastic"
+        >
+          {projects.map((project) => (
+            <Card key={project.title}>
+              <div className="h-full flex flex-col">
+                <div className="h-52 bg-black/60 border-b border-main/25 flex items-center justify-center p-4">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
 
-            <h3 className="text-xl font-semibold text-main mb-2">
-              {p.title}
-            </h3>
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="text-xs uppercase tracking-widest text-accent mb-3">
+                    {t("projects.projectLabel")}
+                  </span>
 
-            <p className="text-white/75 text-sm leading-relaxed mb-3">
-              {p.desc}
-            </p>
+                  <h3 className="text-2xl font-bold text-main mb-3">
+                    {project.title}
+                  </h3>
 
-            <p className="text-accent text-sm mb-4">
-              <strong className="text-white">
-                {t("projects.technologies")}
-              </strong>{" "}
-              {p.tech}
-            </p>
+                  <p className="text-white/75 text-lg leading-6 mb-4">
+                    {project.desc}
+                  </p>
 
-            <div
-              className={`transition-all duration-500 ease-in-out ${
-                hoveredProject === p.title
-                  ? "max-h-72 opacity-100 scale-100 mt-4"
-                  : "max-h-0 opacity-0 scale-95 mt-0"
-              }`}
-            >
-              <img
-                src={p.image}
-                alt={p.title}
-                className="w-full h-56 object-contain rounded-xl border border-main/20 bg-black/40"
-              />
-            </div>
-          </article>
-        ))}
+                  <p className="text-accent text-sm mt-auto">
+                    <strong className="text-white">
+                      {t("projects.technologies")}
+                    </strong>{" "}
+                    {project.tech}
+                  </p>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </CardSwap>
       </div>
     </section>
   );

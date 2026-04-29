@@ -19,6 +19,6 @@ body {
 
 .glass-card {
   background: rgba(28, 142, 166, 0.08);
+  border: 1px solid rgba(28, 142, 166, 0.25);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
