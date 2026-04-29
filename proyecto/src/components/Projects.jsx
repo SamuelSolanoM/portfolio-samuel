@@ -38,7 +38,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="proyectos" className="px-6 max-w-7xl mx-auto">
+    <section id="proyectos" className="scroll-mt-32 px-6 max-w-7xl mx-auto">
 
       <div className="relative min-h-[650px] overflow-visible">
         <div className="max-w-xl pt-16">

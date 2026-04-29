@@ -62,10 +62,10 @@ const WorkSkills = () => {
   return (
     <section
     id="skills"
-    className="max-w-7xl mx-auto px-6 pt-20 grid lg:grid-cols-2 gap-14 items-start"
-    >
+    className="scroll-mt-32 max-w-7xl mx-auto px-6 pt-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start overflow-hidden"
+  >
       <div>
-        <h2 className="text-5xl font-bold mb-6 text-white">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
           {t("work.title")}
         </h2>
 
@@ -77,12 +77,12 @@ const WorkSkills = () => {
            {t("work.description3")}
         </p>
 
-        <div className="flex gap-6 mb-8">
+        <div className="flex flex-wrap gap-4 sm:gap-6 mb-8">
           {steps.map((step, index) => (
             <button
               key={step.number}
               onClick={() => setActiveStep(index)}
-              className={`w-14 h-14 rounded-full font-bold text-lg transition-all duration-300 ${
+              className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full font-bold text-base sm:text-lg transition-all duration-300 ${
                 activeStep === index
                   ? "bg-accent text-black scale-110"
                   : "bg-white/20 text-white  hover:bg-main"

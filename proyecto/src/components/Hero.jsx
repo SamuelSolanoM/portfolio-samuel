@@ -8,25 +8,25 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section
+      <section
       id="inicio"
-      className="max-w-7xl mx-auto px-6 pt-24 grid lg:grid-cols-2 gap-12 items-center"
+      className="scroll-mt-32 max-w-7xl mx-auto px-6 pt-16 md:pt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
     >
       <div>
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
           Samuel Solano
           <br />
           Molina
         </h1>
 
-        <h2 className="text-4xl md:text-7xl font-bold text-main mt-4 leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-main mt-4 leading-tight">
         {t("hero.roleLine1")}
         <br />
         {t("hero.roleLine2")}
        </h2>
 
-        <div className="mt-8 inline-block bg-main text-white font-bold px-6 py-3 rounded-xl shadow-[0_0_25px_rgba(28,142,166,0.35)]">
+        <div className="mt-8 inline-block bg-main text-white font-bold px-5 sm:px-6 py-3 rounded-xl shadow-[0_0_25px_rgba(28,142,166,0.35)] text-sm sm:text-base">
         {t("hero.phrase")}
         </div>
       </div>

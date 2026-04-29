@@ -9,7 +9,7 @@ const Curriculum = () => {
   return (
     <section
     id="curriculum"
-    className="max-w-7xl mx-auto px-6 pt-40 pb-28"
+    className="scroll-mt-32 max-w-7xl mx-auto px-6 pt-40 pb-28"
     >
       <div className="grid lg:grid-cols-2 gap-14 items-start">
 

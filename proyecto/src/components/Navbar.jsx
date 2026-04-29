@@ -14,6 +14,7 @@ const Navbar = () => {
     { label: t("navbar.home"), href: "#inicio" },
     { label: t("navbar.skills"), href: "#skills" },
     { label: t("navbar.projects"), href: "#proyectos" },
+    { label: t("navbar.curriculum"), href: "#curriculum" },
     { label: t("navbar.contact"), href: "#contacto" },
     { label: t("navbar.switch"), href: "#idioma", action: "language" },
   ];
