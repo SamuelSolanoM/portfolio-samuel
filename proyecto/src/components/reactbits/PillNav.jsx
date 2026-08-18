@@ -213,17 +213,14 @@ const PillNav = ({
     }
   };
 
-  const toggleMobileMenu = () => {
-    const newState = !isMobileMenuOpen;
-    setIsMobileMenuOpen(newState);
-
+  const animateMobileMenu = (open) => {
     const hamburger = hamburgerRef.current;
     const menu = mobileMenuRef.current;
 
     if (hamburger) {
       const lines = hamburger.querySelectorAll(".hamburger-line");
 
-      if (newState) {
+      if (open) {
         gsap.to(lines[0], {
           rotation: 45,
           y: 3,
@@ -255,7 +252,7 @@ const PillNav = ({
     }
 
     if (menu) {
-      if (newState) {
+      if (open) {
         gsap.set(menu, { visibility: "visible" });
 
         gsap.fromTo(
@@ -288,6 +285,18 @@ const PillNav = ({
         });
       }
     }
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    animateMobileMenu(false);
+  };
+
+  const toggleMobileMenu = () => {
+    const newState = !isMobileMenuOpen;
+
+    setIsMobileMenuOpen(newState);
+    animateMobileMenu(newState);
 
     onMobileMenuClick?.();
   };
@@ -356,6 +365,7 @@ const PillNav = ({
           className="mobile-menu-button mobile-only"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
           ref={hamburgerRef}
         >
           <span className="hamburger-line" />
@@ -378,7 +388,7 @@ const PillNav = ({
                 }`}
                 onClick={(e) => {
                   handleItemClick(e, item);
-                  setIsMobileMenuOpen(false);
+                  closeMobileMenu();
                 }}
               >
                 {item.label}
