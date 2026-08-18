@@ -12,10 +12,10 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Infinity Growth-UI",
-      desc: t("projects.items.infinity.desc"),
-      tech: "C# · .NET · SQL Server · UI",
-      image: infinitiImg,
+      title: "Proyecto Patrones",
+      desc: t("projects.items.patrones.desc"),
+      tech: "Unity · C# · Patrones de diseño",
+      image: patronesImg,
     },
     {
       title: "Corporación Font",
@@ -32,10 +32,10 @@ const Projects = () => {
       image: dcodeImg,
     },
     {
-      title: "Proyecto Patrones",
-      desc: t("projects.items.patrones.desc"),
-      tech: "Unity · C# · Patrones de diseño",
-      image: patronesImg,
+      title: "Infinity Growth-UI",
+      desc: t("projects.items.infinity.desc"),
+      tech: "C# · .NET · SQL Server · UI",
+      image: infinitiImg,
     },
   ];
 
