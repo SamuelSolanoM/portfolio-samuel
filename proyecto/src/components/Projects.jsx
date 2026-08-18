@@ -18,6 +18,14 @@ const Projects = () => {
       image: infinitiImg,
     },
     {
+      title: "Corporación Font",
+      desc: t("projects.items.corporacionFont.desc"),
+      tech: "LinxSphere · Power Automate · Power Apps · Copilot Studio",
+      image: corporacionFontImg,
+      imageClassName:
+        "block w-full max-w-[460px] rounded bg-white px-4 sm:px-5 py-3 sm:py-4 object-contain",
+    },
+    {
       title: "DreamInCode",
       desc: t("projects.items.dream.desc"),
       tech: "IA · Node.js · Integraciones",
@@ -28,14 +36,6 @@ const Projects = () => {
       desc: t("projects.items.patrones.desc"),
       tech: "Unity · C# · Patrones de diseño",
       image: patronesImg,
-    },
-    {
-      title: "Corporación Font",
-      desc: t("projects.items.corporacionFont.desc"),
-      tech: "LinxSphere · Power Automate · Power Apps · Copilot Studio",
-      image: corporacionFontImg,
-      imageClassName:
-        "block w-full max-w-[460px] rounded bg-white px-4 sm:px-5 py-3 sm:py-4 object-contain",
     },
   ];
 
