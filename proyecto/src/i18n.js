@@ -57,8 +57,8 @@ const resources = {
         patrones: {
           desc: "Juego procedural aplicando patrones de diseño para una mejor arquitectura.",
         },
-        pokemon: {
-          desc: "Juego de batalla con lógica de combate y persistencia de datos.",
+        corporacionFont: {
+          desc: "Pasantía en desarrollo y automatización: apoyo en LinxSphere, pruebas, documentación, capacitación y digitalización de procesos internos.",
         },
       },
     },
@@ -129,7 +129,8 @@ const resources = {
       work: {
       title: "How do I work?",
       description: "I follow a clear and structured process to transform an idea into",
-      description2: "a functional solution, taking care of both development logic and user experience.",
+      description2: "a functional solution, balancing development logic and",
+      description3: "user experience.",
       },
 
       about: {
@@ -156,8 +157,8 @@ const resources = {
         patrones: {
           desc: "Procedural game applying design patterns for better architecture.",
         },
-        pokemon: {
-          desc: "Battle game with combat logic and data persistence.",
+        corporacionFont: {
+          desc: "Software and automation internship supporting LinxSphere, testing, documentation, user training, and internal process digitization.",
         },
       },
     },

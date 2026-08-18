@@ -94,7 +94,7 @@ const WorkSkills = () => {
         </div>
 
         <BorderGlow
-        className="w-fit"
+        className="w-full max-w-[520px]"
         edgeSensitivity={10}
         glowColor="192 40 69"
         backgroundColor="#061014"
@@ -106,19 +106,19 @@ const WorkSkills = () => {
         colors={["#1C8EA6", "#8EC3D1", "#1C8EA6"]}
         fillOpacity={0.35}
       >
-       <div className="rounded-2xl p-6 w-[520px]">
-          <h3 className="text-3xl font-bold text-main mb-4">
+       <div className="rounded-2xl p-5 sm:p-6 w-full text-white">
+          <h3 className="text-2xl sm:text-3xl font-bold text-main mb-4">
             {steps[activeStep].title}
           </h3>
 
-          <p className="text-white/80 text-lg leading-7">
+          <p className="text-white/80 text-base sm:text-lg leading-7">
             {steps[activeStep].text}
           </p>
         </div>
       </BorderGlow>
       </div>
       <div>
-        <h2 className="section-title text-5xl font-bold mb-10 text-center lg:text-left">
+        <h2 className="section-title text-4xl sm:text-5xl font-bold mb-10 text-center lg:text-left">
           {t("skills.title")}
         </h2>
 
@@ -137,7 +137,7 @@ const WorkSkills = () => {
               colors={["#1C8EA6", "#8EC3D1", "#1C8EA6"]}
               fillOpacity={0.45}
             >
-              <div className="px-5 py-3 min-w-[90px] text-center text-white font-semibold rounded-xl">
+              <div className="px-4 sm:px-5 py-3 min-w-[84px] text-center !text-white font-semibold rounded-xl text-sm sm:text-base">
                 {skill}
               </div>
             </BorderGlow>

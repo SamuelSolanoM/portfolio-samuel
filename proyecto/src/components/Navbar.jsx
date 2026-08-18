@@ -20,8 +20,8 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-black/90 border-b border-main/20 backdrop-blur h-28">
-      <nav className="max-w-7xl mx-auto px-8 h-28 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-black/90 border-b border-main/20 backdrop-blur h-24 sm:h-28">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-8 h-24 sm:h-28 flex items-center justify-between">
         <PillNav
         logo={favicon}
         logoAlt="Samuel Solano Logo"

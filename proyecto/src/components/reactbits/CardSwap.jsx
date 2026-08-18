@@ -85,12 +85,21 @@ const CardSwap = ({
 
   useEffect(() => {
     const total = refs.length;
+    const isCompact = window.innerWidth <= 1100;
+    const isPhone = window.innerWidth <= 480;
+    const slotDistanceX = isCompact
+      ? Math.min(cardDistance, isPhone ? 8 : 24)
+      : cardDistance;
+    const slotDistanceY = isCompact
+      ? Math.min(verticalDistance, isPhone ? 18 : 34)
+      : verticalDistance;
+    const cardSkew = isCompact ? Math.min(skewAmount, 2) : skewAmount;
 
     refs.forEach((r, i) =>
       placeNow(
         r.current,
-        makeSlot(i, cardDistance, verticalDistance, total),
-        skewAmount
+        makeSlot(i, slotDistanceX, slotDistanceY, total),
+        cardSkew
       )
     );
 
@@ -113,7 +122,7 @@ const CardSwap = ({
 
       rest.forEach((idx, i) => {
         const el = refs[idx].current;
-        const slot = makeSlot(i, cardDistance, verticalDistance, refs.length);
+        const slot = makeSlot(i, slotDistanceX, slotDistanceY, refs.length);
 
         tl.set(el, { zIndex: slot.zIndex }, "promote");
         tl.to(
@@ -131,8 +140,8 @@ const CardSwap = ({
 
       const backSlot = makeSlot(
         refs.length - 1,
-        cardDistance,
-        verticalDistance,
+        slotDistanceX,
+        slotDistanceY,
         refs.length
       );
 

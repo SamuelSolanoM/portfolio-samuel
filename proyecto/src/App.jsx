@@ -27,7 +27,7 @@ function App() {
 
      <footer className="border-t border-main/20 bg-black py-10">
       <div className="max-w-7xl mx-auto px-6 flex justify-center">
-        <div className="flex items-center gap-8 border border-main/30 rounded-2xl px-10 py-6 bg-white/5">
+        <div className="flex items-center gap-5 sm:gap-8 border border-main/30 rounded-2xl px-6 sm:px-10 py-5 sm:py-6 bg-white/5">
           <img
             src={favicon}
             alt="Logo Samuel Solano"
