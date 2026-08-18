@@ -19,8 +19,8 @@ function App() {
       <Navbar />
       <main className="space-y-24 pb-20">
         <Hero />
-        <WorkSkills />
         <Projects />
+        <WorkSkills />
         <Curriculum />
         <Contact />
       </main>
